@@ -18,13 +18,21 @@ class Parser:
 
         self.parser.add_argument('--n-workers', type=int, default=2)
         self.parser.add_argument('--n-clients', type=int, default=10)
-        self.parser.add_argument('--n-rnds', type=int, default=100)
+        self.parser.add_argument('--n-rnds', type=int, default=8)
         self.parser.add_argument('--n-eps', type=int, default=1)
         self.parser.add_argument('--frac', type=float, default=1.0)
         self.parser.add_argument('--n-dims', type=int, default=128)
         self.parser.add_argument('--lr', type=float, default=0.1)
         self.parser.add_argument('--weight_decay', type=float, default=1e-6)
         self.parser.add_argument('--l1', type=float, default=1e-3)
+
+        # fedpub
+        self.parser.add_argument('--laye-mask-one', action='store_true')
+        self.parser.add_argument('--clsf-mask-one', action='store_true')
+        self.parser.add_argument('--n-proxy', type=int, default=5)
+        self.parser.add_argument('--agg-norm', type=str, default='exp', choices=['cosine', 'exp'])
+        self.parser.add_argument('--norm-scale', type=float, default=10)
+        self.parser.add_argument('--loc-l2', type=float, default=1e-3)
 
     def parse(self):
         args, unparsed = self.parser.parse_known_args()

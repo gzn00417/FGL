@@ -1,2 +1,4 @@
 from .gcn import GCN
-__all__ = ['GCN']
+from .masked_gcn import MaskedGCN
+
+__all__ = ['GCN', 'MaskedGCN']

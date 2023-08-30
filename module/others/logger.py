@@ -11,7 +11,7 @@ class Logger:
         from datetime import datetime
         now = datetime.now().strftime("%Y%m%d-%H:%M:%S")
         msg = f'[{now}]'
-        msg += f'[{self.args.model}]'
+        msg += f'[{self.args.federated}]'
         msg += f'[g:{self.g_id}]'
         msg += f'[server]'if self.is_server else f'[c:{self.c_id}]'
         msg += f' {message}'

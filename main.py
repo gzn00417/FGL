@@ -25,6 +25,9 @@ if __name__ == '__main__':
     if args.federated == 'fedavg':
         from module.federated.fedavg.server import Server
         from module.federated.fedavg.client import Client
+    elif args.federated == 'fedpub':
+        from module.federated.fedpub.server import Server
+        from module.federated.fedpub.client import Client
     else:
         print('incorrect model was given: {}'.format(args.model))
         os._exit(0)
